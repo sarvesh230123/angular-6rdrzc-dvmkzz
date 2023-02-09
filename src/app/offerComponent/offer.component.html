@@ -9,7 +9,11 @@
   </tr>
   <tr *ngFor="let customer of customerData">
     <td>{{ customer.customerId }}</td>
-    <td>{{ customer.firstName }} {{ customer.lastName }}</td>
+    <td>
+      <a [routerLink]="['./customer', customer.customerId]">
+        {{ customer.firstName }} {{ customer.lastName }}
+      </a>
+    </td>
     <td>{{ customer.email }}</td>
 
     <td>
@@ -19,7 +23,13 @@
           else other_content
         "
       >
-        <button>Avail Offer</button>
+        <a [title]="customer.firstName + ' details'"> </a>
+        <a
+          [title]="customer.firstName + ' details'"
+          [routerLink]="['./customer', customer.customerId]"
+        >
+          <button>Avail Offer</button>
+        </a>
       </p>
       <ng-template #other_content>
         <button>No Offer</button>

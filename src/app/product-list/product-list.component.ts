@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { products } from '../products';
-import { customerData } from '../customerData';
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -9,7 +9,6 @@ import { customerData } from '../customerData';
 })
 export class ProductListComponent {
   products = products;
-  customerData = customerData;
 
   share() {
     window.alert('The product has been shared!');

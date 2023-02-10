@@ -1,15 +1,22 @@
-<h2>Customer-List</h2>
+<h2>Product-List</h2>
 
 <table id="customers">
   <tr>
     <th>Sr. N.</th>
-    <th>Customer Name</th>
-    <th>Email</th>
+    <th>Product Name</th>
+    <th>Price</th>
   </tr>
-  <tr *ngFor="let customer of customerData">
-    <td>{{ customer.customerId }}</td>
-    <td>{{ customer.firstName }} {{ customer.lastName }}</td>
-    <td>{{ customer.email }}</td>
+  <tr *ngFor="let product of products">
+    <td>{{ product.id }}</td>
+    <td>
+      <a
+        [title]="product.name + ' details'"
+        [routerLink]="['/products', product.id]"
+      >
+        {{ product.name }}
+      </a>
+    </td>
+    <td>{{ product.price }}</td>
   </tr>
 </table>
 <!-- 
